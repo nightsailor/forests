@@ -8,7 +8,7 @@ export default function TopBar() {
   return (
     <div className={styles.top}>
       <div className={styles.topLeft}>
-        <span>JUNGLE</span>
+        <span>Forest</span>
       </div>
       <div className={styles.topCenter}>
         {user &&
@@ -20,7 +20,7 @@ export default function TopBar() {
           </li>
           <li className={styles.topListItem}>
             <Link className={styles.link} href="#">
-              FOREST
+              NATIONAL PARKS
             </Link>
           </li>
           <li className={styles.topListItem}>
@@ -28,11 +28,11 @@ export default function TopBar() {
               WILD LIFE
             </Link>
           </li>
-          <li className={styles.topListItem}>
+          {/* <li className={styles.topListItem}>
             <Link className={styles.link} href="#">
               GALLERY
             </Link>
-          </li>
+          </li> */}
         </ul>)}
       </div>
       <div className={styles.topRight}>
