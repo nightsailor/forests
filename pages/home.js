@@ -39,7 +39,7 @@ const Gallery = styled.div`
 const GalleryTitle = styled.div`
   text-align: center;
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 `
 
 const Home2 = () => {
@@ -80,7 +80,7 @@ const Home2 = () => {
               overflow: hidden;
               width:100%;
             }
-            .cards-image-2022 {
+            .cards-image-2022  {
               background-size: cover;
               background-repeat: no-repeat;
               background-position: 50% 50%;
@@ -95,19 +95,19 @@ const Home2 = () => {
             .cards-image-2022:hover {
               background-color: rgba(15, 191, 97, 0.1);
             }
-            .cards-image-2022:nth-child(1) {
+            .cards-image1 {
               background-image: url('https://tourscanner.com/blog/wp-content/uploads/2020/04/Etosha-National-Park-Namibia.jpg');
             }
-            .cards-image-2022:nth-child(2) {
+            .cards-image2 {
               background-image: url('https://tourscanner.com/blog/wp-content/uploads/2020/04/Grand-Canyon-National-Park-United-States-of-America.jpg');
             }
-            .cards-image-2022:nth-child(3) {
+            .cards-image3 {
               background-image: url('https://tourscanner.com/blog/wp-content/uploads/2020/04/G%C3%B6reme-National-Park-Turkey.jpg');
             }
-            .cards-image-2022:nth-child(4) {
+            .cards-image4 {
               background-image: url('https://tourscanner.com/blog/wp-content/uploads/2020/04/Jim-Corbett-National-Park-India.jpg');
             }
-            .cards-image-2022:nth-child(5) {
+            .cards-image5 {
               background-image: url('https://tourscanner.com/blog/wp-content/uploads/2020/04/Arcipelago-di-La-Maddalena-National-Park-Italy.jpg');
             }
             .cards-text-2022 {
@@ -122,29 +122,29 @@ const Home2 = () => {
           `}</style>
           <div className="box1">
             <div className="cards-2022">
-              <div className="cards-image-2022">
+              <div className="cards-image-2022 cards-image1">
                 <span className="cards-text-2022">Etosha National Park, Namibia</span>
               </div>
             </div>
             <div className="cards-2022">
-              <div className="cards-image-2022">
+              <div className="cards-image-2022 cards-image2">
                 <span className="cards-text-2022">Grand Canyon National Park, United States of America</span>
               </div>
             </div>
           </div>
           <div className="box2">
             <div className="cards-2022">
-              <div className="cards-image-2022">
+              <div className="cards-image-2022 cards-image3">
                 <span className="cards-text-2022">Göreme National Park, Turkey</span>
               </div>
             </div>
             <div className="cards-2022">
-              <div className="cards-image-2022">
+              <div className="cards-image-2022 cards-image4">
                 <span className="cards-text-2022">Jim Corbett National Park, India</span>
               </div>
             </div>
             <div className="cards-2022">
-              <div className="cards-image-2022">
+              <div className="cards-image-2022 cards-image5">
                 <span className="cards-text-2022">Arcipelago di La Maddalena National Park, Italy</span>
               </div>
             </div>
