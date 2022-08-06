@@ -13,8 +13,9 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import { useAuth } from "./api/firebase/UserAuthContext";
-import { setErrorMessage } from "./api/firebase/setErrorMessage";
+import { useAuth } from "../firebase/UserAuthContext";
+import { setErrorMessage } from "../firebase/setErrorMessage";
+import { useRouter } from "next/dist/client/router";
 
 function Copyright(props) {
   return (
@@ -39,10 +40,6 @@ const theme = createTheme();
 export default function SignUp() {
   const router = useRouter();
   const auth = useAuth();
-
-  if (auth.user) {
-    router.push("/");
-  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -92,27 +89,6 @@ export default function SignUp() {
             sx={{ mt: 3 }}
           >
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid>
               <Grid item xs={12}>
                 <TextField
                   required
@@ -129,6 +105,17 @@ export default function SignUp() {
                   fullWidth
                   name="password"
                   label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="password2"
+                  label="Confirm Password"
                   type="password"
                   id="password"
                   autoComplete="new-password"

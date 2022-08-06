@@ -3,6 +3,9 @@ import Image from "next/image";
 import Topbar from "../components/TopBar";
 import Link from "@mui/material/Link";
 
+import { useAuth } from "../firebase/UserAuthContext";
+import { useRouter } from "next/router";
+
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
@@ -45,6 +48,8 @@ const rightLink = {
 const theme = createTheme();
 
 const Home = () => {
+  const auth = useAuth();
+  const router = useRouter();
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -59,7 +64,7 @@ const Home = () => {
               color="inherit"
               variant="h6"
               underline="none"
-              href="/signIn"
+              href="/signin"
               sx={rightLink}
             >
               {"Sign In"}
@@ -67,7 +72,7 @@ const Home = () => {
             <Link
               variant="h6"
               underline="none"
-              href="/signUp"
+              href="/signup"
               sx={{ ...rightLink, color: "black" }}
             >
               {"Sign Up"}

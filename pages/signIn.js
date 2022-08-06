@@ -13,8 +13,9 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import { useAuth } from "./api/firebase/UserAuthContext";
-import { setErrorMessage } from "./api/firebase/setErrorMessage";
+import { useAuth } from "../firebase/UserAuthContext";
+import { setErrorMessage } from "../firebase/setErrorMessage";
+import { useRouter } from "next/router";
 
 function Copyright(props) {
   return (
@@ -38,6 +39,7 @@ const theme = createTheme();
 export default function SignIn() {
   const router = useRouter();
   const auth = useAuth();
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
