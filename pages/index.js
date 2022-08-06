@@ -64,7 +64,7 @@ const Home = () => {
               color="inherit"
               variant="h6"
               underline="none"
-              href="/signin"
+              href="/signIn"
               sx={rightLink}
             >
               {"Sign In"}
@@ -72,7 +72,7 @@ const Home = () => {
             <Link
               variant="h6"
               underline="none"
-              href="/signup"
+              href="/signUp"
               sx={{ ...rightLink, color: "black" }}
             >
               {"Sign Up"}
