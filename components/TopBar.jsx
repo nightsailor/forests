@@ -22,8 +22,8 @@ export default function TopBar() {
               </Link>
             </li>
             <li className={styles.topListItem}>
-              <Link className={styles.link} href="#">
-                NATIONAL PARKS
+              <Link className={styles.link} href="/information">
+                NATIONAL PARKS and SEARCH
               </Link>
             </li>
             <li className={styles.topListItem}>
