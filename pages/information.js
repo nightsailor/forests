@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Topbar from "../components/TopBar";
 import styled from "styled-components";
-import { parks } from "./components/parks";
+import { parks } from "../firebase/parks";
 import { Loader } from "@googlemaps/js-api-loader";
 import {
   Grid,
