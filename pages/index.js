@@ -45,7 +45,7 @@ const GalleryTitle = styled.div`
   margin-bottom: 40px;
 `;
 
-const index = () => {
+const Home = () => {
   const auth = useAuth();
   const router = useRouter();
 
@@ -175,4 +175,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Home;
