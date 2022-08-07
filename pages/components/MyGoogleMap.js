@@ -16,7 +16,7 @@ class MyGoogleMap extends Component {
   state = {
     mapApiLoaded: false,
     mapInstance: null,
-    mapApi: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    mapApi: null,
     geoCoder: null,
     places: [],
     center: {
