@@ -54,12 +54,12 @@ export default function TopBar() {
           ) : (
             <>
               <li className={styles.topListItem}>
-                <Link className={styles.link} href="signin">
+                <Link className={styles.link} href="signIn">
                   LOGIN
                 </Link>
               </li>
               <li className={styles.topListItem}>
-                <Link className={styles.link} href="/signup">
+                <Link className={styles.link} href="signUp">
                   REGISTER
                 </Link>
               </li>
