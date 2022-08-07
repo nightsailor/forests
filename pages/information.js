@@ -2,8 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import Topbar from "../components/TopBar";
 import styled from "styled-components";
-import { parks } from "./api/parks";
-
+import { parks } from "./components/parks";
+import { Loader } from "@googlemaps/js-api-loader";
 import {
   Grid,
   List,
@@ -22,6 +22,7 @@ import { useAuth } from "../firebase/UserAuthContext";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { makeStyles } from "@mui/styles";
+import MyGoogleMap from "./components/MyGoogleMap";
 
 const useStyles = makeStyles((theme) => ({
   listRoot: {
@@ -156,25 +157,7 @@ export default function Information() {
                   </Paper>
                 </Grid>
                 <Grid item xs={6}>
-                  <input
-                    id="pac-input"
-                    class="controls"
-                    type="text"
-                    placeholder="Search Box"
-                  />
-                  <div id="map"></div>
-                  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-                  <link
-                    rel="stylesheet"
-                    type="text/css"
-                    href="../styles/map.css"
-                  />
-                  <script type="module" src="./information.ts"></script>
-                  <script
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSnMZH1ZQguXoFo4YvAoT564R6SEHDHF8&callback=initAutocomplete&libraries=places&v=weekly"
-                    defer
-                  ></script>
+                  <MyGoogleMap />
                 </Grid>
               </Grid>
             </Container>
