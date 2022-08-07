@@ -1,183 +1,178 @@
 import Head from "next/head";
 import Image from "next/image";
 import Topbar from "../components/TopBar";
-import Link from "@mui/material/Link";
+import styled from "styled-components";
 
 import { useAuth } from "../firebase/UserAuthContext";
 import { useRouter } from "next/router";
 
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Button from "@mui/material/Button";
-import CameraIcon from "@mui/icons-material/PhotoCamera";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import CssBaseline from "@mui/material/CssBaseline";
-import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+const Hero = styled.div`
+  background-image: url("./bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 50px);
+  width: 100%;
+  text-align: center;
+`;
+const HeroTitle = styled.h1`
+  font-size: 3rem;
+  line-height: 3.25rem;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  padding-top: 14%;
+  width: 75%;
+  margin: 0 auto;
+  font-family: Georgia, Times, "Times New Roman", serif;
+`;
+const Button = styled.button`
+  background-color: transparent;
+  border: 1px solid white;
+  cursor: pointer;
+  padding: 10px 30px;
+  margin-top: 40px;
+  color: white;
+`;
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+const Gallery = styled.div`
+  color: black;
+  padding-top: 150px;
+`;
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const GalleryTitle = styled.div`
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+`;
 
-const rightLink = {
-  fontSize: 16,
-  color: "common.white",
-  ml: 3,
-  mr: 3,
-};
-
-const theme = createTheme();
-
-const Home = () => {
+const index = () => {
   const auth = useAuth();
   const router = useRouter();
+
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          <CameraIcon sx={{ mr: 2 }} />
-          <Typography variant="h6" color="inherit" noWrap>
-            Album layout
-          </Typography>
-          <Box sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}>
-            <Link
-              color="inherit"
-              variant="h6"
-              underline="none"
-              href="/signIn"
-              sx={rightLink}
-            >
-              {"Sign In"}
-            </Link>
-            <Link
-              variant="h6"
-              underline="none"
-              href="/signUp"
-              sx={{ ...rightLink, color: "black" }}
-            >
-              {"Sign Up"}
-            </Link>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <main>
-        {/* Hero unit */}
-        <Box
-          sx={{
-            bgcolor: "background.paper",
-            pt: 8,
-            pb: 6,
-          }}
-        >
-          <Container maxWidth="sm">
-            <Typography
-              component="h1"
-              variant="h2"
-              align="center"
-              color="text.primary"
-              gutterBottom
-            >
-              Album layout
-            </Typography>
-            <Typography
-              variant="h5"
-              align="center"
-              color="text.secondary"
-              paragraph
-            >
-              Something short and leading about the collection below—its
-              contents, the creator, etc. Make it short and sweet, but not too
-              short so folks don&apos;t simply skip over it entirely.
-            </Typography>
-            <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
-            </Stack>
-          </Container>
-        </Box>
-        <Container sx={{ py: 8 }} maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <CardMedia
-                    component="img"
-                    sx={{
-                      // 16:9
-                      pt: "56.25%",
-                    }}
-                    image="https://source.unsplash.com/random"
-                    alt="random"
-                  />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
-                    </Typography>
-                    <Typography>
-                      This is a media card. You can use this section to describe
-                      the content.
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small">View</Button>
-                    <Button size="small">Edit</Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </main>
-      {/* Footer */}
-      <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="text.secondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </Box>
-      {/* End footer */}
-    </ThemeProvider>
+    <div>
+      <Head>
+        <title>Forest</title>
+        <meta name="description" content="Explore national parks" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div>
+        <Topbar />
+        <Hero>
+          <HeroTitle>
+            Explore national parks with digital tours, ranger programs, trips
+            ideas, and more.
+          </HeroTitle>
+          <a href="#pics">
+            <Button>Find out more</Button>
+          </a>
+        </Hero>
+        <Gallery id="pics">
+          <GalleryTitle>National Parks of the World</GalleryTitle>
+
+          <div className="gallery-wrapper">
+            <style global jsx>{`
+              .box1 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                padding: 5px;
+              }
+              .box2 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                padding: 0 5px;
+              }
+              .cards-2022 {
+                height: 400px;
+                overflow: hidden;
+                width: 100%;
+              }
+              .cards-image-2022 {
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-position: center;
+                height: 100%;
+                width: 100%;
+
+                text-align: center;
+                margin-bottom: 0;
+                position: relative;
+              }
+              .cards-image-2022:hover {
+                background-color: rgba(15, 191, 97, 0.1);
+              }
+              .cards-image1 {
+                background-image: url("https://tourscanner.com/blog/wp-content/uploads/2020/04/Etosha-National-Park-Namibia.jpg");
+              }
+              .cards-image2 {
+                background-image: url("https://tourscanner.com/blog/wp-content/uploads/2020/04/Grand-Canyon-National-Park-United-States-of-America.jpg");
+              }
+              .cards-image3 {
+                background-image: url("https://tourscanner.com/blog/wp-content/uploads/2020/04/G%C3%B6reme-National-Park-Turkey.jpg");
+              }
+              .cards-image4 {
+                background-image: url("https://tourscanner.com/blog/wp-content/uploads/2020/04/Jim-Corbett-National-Park-India.jpg");
+              }
+              .cards-image5 {
+                background-image: url("https://tourscanner.com/blog/wp-content/uploads/2020/04/Arcipelago-di-La-Maddalena-National-Park-Italy.jpg");
+              }
+              .cards-text-2022 {
+                verticle-align: middle;
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                right: 0;
+                font-size: 36px;
+                color: white;
+              }
+            `}</style>
+            <div className="box1">
+              <div className="cards-2022">
+                <div className="cards-image-2022 cards-image1">
+                  <span className="cards-text-2022">
+                    Etosha National Park, Namibia
+                  </span>
+                </div>
+              </div>
+              <div className="cards-2022">
+                <div className="cards-image-2022 cards-image2">
+                  <span className="cards-text-2022">
+                    Grand Canyon National Park, United States of America
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="box2">
+              <div className="cards-2022">
+                <div className="cards-image-2022 cards-image3">
+                  <span className="cards-text-2022">
+                    Göreme National Park, Turkey
+                  </span>
+                </div>
+              </div>
+              <div className="cards-2022">
+                <div className="cards-image-2022 cards-image4">
+                  <span className="cards-text-2022">
+                    Jim Corbett National Park, India
+                  </span>
+                </div>
+              </div>
+              <div className="cards-2022">
+                <div className="cards-image-2022 cards-image5">
+                  <span className="cards-text-2022">
+                    Arcipelago di La Maddalena National Park, Italy
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Gallery>
+      </div>
+    </div>
   );
 };
 
-export default Home;
+export default index;
