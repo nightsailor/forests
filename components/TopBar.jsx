@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import styles from "../styles/Topbar.module.css";
+import { useAuth } from "../firebase/UserAuthContext";
+import { useRouter } from "next/router";
 
 export default function TopBar() {
-  const [user,setUser] = useState(true);
+  const auth = useAuth();
+  const router = useRouter();
 
   return (
     <div className={styles.top}>
@@ -11,50 +14,57 @@ export default function TopBar() {
         <span>Forest</span>
       </div>
       <div className={styles.topCenter}>
-        {user &&
-        (<ul className={styles.topList}>
-          <li className={styles.topListItem}>
-            <Link className={styles.link} href="/">
-              HOME
-            </Link>
-          </li>
-          <li className={styles.topListItem}>
-            <Link className={styles.link} href="#">
-              NATIONAL PARKS
-            </Link>
-          </li>
-          <li className={styles.topListItem}>
-            <Link className={styles.link} href="#">
-              WILD LIFE
-            </Link>
-          </li>
-          {/* <li className={styles.topListItem}>
+        {auth.user && (
+          <ul className={styles.topList}>
+            <li className={styles.topListItem}>
+              <Link className={styles.link} href="/">
+                HOME
+              </Link>
+            </li>
+            <li className={styles.topListItem}>
+              <Link className={styles.link} href="#">
+                NATIONAL PARKS
+              </Link>
+            </li>
+            <li className={styles.topListItem}>
+              <Link className={styles.link} href="#">
+                WILD LIFE
+              </Link>
+            </li>
+            {/* <li className={styles.topListItem}>
             <Link className={styles.link} href="#">
               GALLERY
             </Link>
           </li> */}
-        </ul>)}
+          </ul>
+        )}
       </div>
       <div className={styles.topRight}>
         <ul className={styles.topList}>
-        {user ? (
-          <li className={styles.topListItem}>
-            LOGOUT
-          </li>
-        ) : (
-          <>
-            <li className={styles.topListItem}>
-              <Link className={styles.link} href="#">
-                LOGIN
-              </Link>
+          {auth.user ? (
+            <li
+              className={styles.topListItem}
+              onClick={() => {
+                auth.logOut();
+                router.push("/");
+              }}
+            >
+              LOGOUT
             </li>
-            <li className={styles.topListItem}>
-              <Link className={styles.link} href="#">
-                REGISTER
-              </Link>
-            </li>
-          </>
-        )}
+          ) : (
+            <>
+              <li className={styles.topListItem}>
+                <Link className={styles.link} href="signin">
+                  LOGIN
+                </Link>
+              </li>
+              <li className={styles.topListItem}>
+                <Link className={styles.link} href="/signup">
+                  REGISTER
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>
