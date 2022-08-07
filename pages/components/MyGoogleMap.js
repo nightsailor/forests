@@ -19,8 +19,11 @@ class MyGoogleMap extends Component {
     mapApi: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
     geoCoder: null,
     places: [],
-    center: [-33.8688, 151.2195],
-    zoom: 9,
+    center: {
+      lat: 38.89,
+      lng: 77.03,
+    },
+    zoom: 10,
     address: "",
     draggable: true,
   };
@@ -34,7 +37,7 @@ class MyGoogleMap extends Component {
   };
   onMarkerInteractionMouseUp = (childKey, childProps, mouse) => {
     this.setState({ draggable: true });
-    this._generateAddress();
+    //this._generateAddress();
   };
 
   _onChange = ({ center, zoom }) => {
@@ -58,7 +61,7 @@ class MyGoogleMap extends Component {
       mapApi: maps,
     });
 
-    this._generateAddress();
+    //this._generateAddress();
   };
 
   addPlace = (place) => {
@@ -67,9 +70,9 @@ class MyGoogleMap extends Component {
       lat: place.geometry.location.lat(),
       lng: place.geometry.location.lng(),
     });
-    this._generateAddress();
+    //this._generateAddress();
   };
-
+  /*
   _generateAddress() {
     const { mapApi } = this.state;
 
@@ -93,6 +96,7 @@ class MyGoogleMap extends Component {
       }
     );
   }
+  */
 
   render() {
     const { places, mapApiLoaded, mapInstance, mapApi } = this.state;
@@ -119,7 +123,7 @@ class MyGoogleMap extends Component {
           onChildClick={() => console.log("child click")}
           onClick={this._onClick}
           bootstrapURLKeys={{
-            key: "AIzaSyAM9uE4Sy2nWFfP-Ha6H8ZC6ghAMKJEKps",
+            key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
             libraries: ["places", "geometry"],
           }}
           yesIWantToUseGoogleMapApiInternals

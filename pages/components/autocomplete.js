@@ -66,6 +66,7 @@ class AutoComplete extends Component {
           type="text"
           onFocus={this.clearSearchBox}
           placeholder="Enter a location"
+          size="90"
         />
       </Wrapper>
     );
