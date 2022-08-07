@@ -61,10 +61,10 @@ const Home = () => {
         <Hero>
           <HeroTitle>
             Explore national parks with digital tours, ranger programs, trips
-            ideas, and more.
+            ideas, and more with our chatbot!.
           </HeroTitle>
-          <a href="#pics">
-            <Button>Find out more</Button>
+          <a href="https://t.me/wildhacks123_bot">
+            <Button>Chat now!</Button>
           </a>
         </Hero>
         <Gallery id="pics">
