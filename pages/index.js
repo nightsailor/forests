@@ -104,6 +104,13 @@ const Home = () => {
               .cards-image-2022:hover {
                 background-color: rgba(15, 191, 97, 0.1);
               }
+              .transparent-2022{
+                width: 100%;
+                height: 100%;
+              }
+              .transparent-2022:hover{
+                background-color: rgba(15, 191, 97, 0.5);
+              }
               .cards-image1 {
                 background-image: url("https://tourscanner.com/blog/wp-content/uploads/2020/04/Etosha-National-Park-Namibia.jpg");
               }
@@ -120,21 +127,32 @@ const Home = () => {
                 background-image: url("https://tourscanner.com/blog/wp-content/uploads/2020/04/Arcipelago-di-La-Maddalena-National-Park-Italy.jpg");
               }
               .cards-text-2022 {
-                verticle-align: middle;
+                // verticle-align: middle;
                 position: absolute;
-                bottom: 10px;
+                // bottom: 10px;
                 left: 0;
                 right: 0;
+                padding-top: 300px;
                 font-size: 36px;
                 color: white;
+                height: 100%;
+                width: 100%;
+                width: 100%;
+                height: 100%;
+              }
+              .cards-text-2022:hover {
+                color: #000;
+                background-color: rgba(117,181,254,0.8);
               }
             `}</style>
             <div className="box1">
               <div className="cards-2022">
                 <div className="cards-image-2022 cards-image1">
+                  {/* <div className="transparent-2022"> */}
                   <span className="cards-text-2022">
                     Etosha National Park, Namibia
                   </span>
+                  {/* </div> */}
                 </div>
               </div>
               <div className="cards-2022">
