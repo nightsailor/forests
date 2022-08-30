@@ -1,0 +1,40 @@
+div.hero {
+  background-image: url("../public/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 50px);
+  width: 100%;
+  text-align: center;
+}
+
+h1.hero-title {
+	font-size: 3rem;
+	line-height: 3.25rem;
+	font-weight: 400;
+	color: white;
+	text-align: center;
+	padding-top: 14%;
+	width: 75%;
+	margin: 0 auto;
+	font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+button.button {
+	background-color: transparent;
+  border: 1px solid white;
+  cursor: pointer;
+  padding: 10px 30px;
+  margin-top: 40px;
+  color: white;
+}
+
+div.gallery {
+	color: black;
+  padding-top: 150px;
+}
+
+div.gallery-title {
+	text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+}

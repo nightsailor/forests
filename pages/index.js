@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Topbar from "../components/TopBar";
 import styled from "styled-components";
+import styles from "../styles/Home.module.css"
 
 import { useAuth } from "../firebase/UserAuthContext";
 import { useRouter } from "next/router";
@@ -58,93 +59,21 @@ const Home = () => {
       </Head>
       <div>
         <Topbar />
-        <Hero>
-          <HeroTitle>
+        <div className={styles.hero}>
+          <h1 className={styles['hero-title']}>
             Explore national parks with digital tours, ranger programs, trips
             ideas, and more with our chatbot!.
-          </HeroTitle>
+          </h1>
           <a href="https://t.me/wildhacks123_bot">
-            <Button>Chat now!</Button>
+            <button className={styles.button}>
+              Chat now!
+            </button>
           </a>
-        </Hero>
-        <Gallery id="pics">
-          <GalleryTitle>National Parks of the World</GalleryTitle>
+        </div>
+        <div id="pics" className={styles.gallery}>
+          <div className={styles['gallery-title']}>National Parks of the World</div>
 
           <div className="gallery-wrapper">
-            <style global jsx>{`
-              .box1 {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-                padding: 5px;
-              }
-              .box2 {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
-                padding: 0 5px;
-              }
-              .cards-2022 {
-                height: 400px;
-                overflow: hidden;
-                width: 100%;
-              }
-              .cards-image-2022 {
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: 50% 50%;
-                background-position: center;
-                height: 100%;
-                width: 100%;
-
-                text-align: center;
-                margin-bottom: 0;
-                position: relative;
-              }
-              .cards-image-2022:hover {
-                background-color: rgba(15, 191, 97, 0.1);
-              }
-              .transparent-2022{
-                width: 100%;
-                height: 100%;
-              }
-              .transparent-2022:hover{
-                background-color: rgba(15, 191, 97, 0.5);
-              }
-              .cards-image1 {
-                background-image: url("https://tourscanner.com/blog/wp-content/uploads/2020/04/Etosha-National-Park-Namibia.jpg");
-              }
-              .cards-image2 {
-                background-image: url("https://tourscanner.com/blog/wp-content/uploads/2020/04/Grand-Canyon-National-Park-United-States-of-America.jpg");
-              }
-              .cards-image3 {
-                background-image: url("https://tourscanner.com/blog/wp-content/uploads/2020/04/G%C3%B6reme-National-Park-Turkey.jpg");
-              }
-              .cards-image4 {
-                background-image: url("https://tourscanner.com/blog/wp-content/uploads/2020/04/Jim-Corbett-National-Park-India.jpg");
-              }
-              .cards-image5 {
-                background-image: url("https://tourscanner.com/blog/wp-content/uploads/2020/04/Arcipelago-di-La-Maddalena-National-Park-Italy.jpg");
-              }
-              .cards-text-2022 {
-                // verticle-align: middle;
-                position: absolute;
-                // bottom: 10px;
-                left: 0;
-                right: 0;
-                padding-top: 300px;
-                font-size: 36px;
-                color: white;
-                height: 100%;
-                width: 100%;
-                width: 100%;
-                height: 100%;
-              }
-              .cards-text-2022:hover {
-                color: #000;
-                background-color: rgba(117,181,254,0.8);
-              }
-            `}</style>
             <div className="box1">
               <div className="cards-2022">
                 <div className="cards-image-2022 cards-image1">
@@ -187,7 +116,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </Gallery>
+        </div>
       </div>
     </div>
   );
